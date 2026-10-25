@@ -1,0 +1,63 @@
+# Architecture
+
+All addressing below is **example addressing**.
+
+## Networks
+
+| Network | VLAN | Subnet | Purpose |
+|---|---|---|---|
+| Management | 10 | 10.10.10.0/24 | Hypervisor and admin interfaces |
+| Trusted | 20 | 10.10.20.0/24 | Daily devices |
+| IoT | 30 | 10.10.30.0/26 | Smart devices |
+| Cameras | 40 | 10.10.40.0/28 | Wired cameras |
+| Guest | 70 | 10.10.70.0/29 | Visitors |
+| Lab | 80 | 10.10.80.0/27 | Targets, DC1, SIEM, Windows client |
+| DMZ | 90 | 10.10.90.0/30 | Static addresses only |
+| `vmbr1` (Proxmox only) | none | 10.10.100.0/24 | Isolated DC-to-DC network |
+
+## Trunk to the hypervisor
+
+The switch port facing the host is a **trunk**:
+
+- **Native (untagged) VLAN:** Management, so the host keeps its management address.
+- **Tagged VLANs:** Lab only.
+- On the host, `vmbr0` is **VLAN aware**, and each lab VM NIC carries a VLAN tag of 80.
+
+## Firewall policy (zone-based)
+
+| Source → Destination | Action | Why |
+|---|---|---|
+| Trusted → Lab | Allow | I reach targets from my workstation |
+| Lab → Trusted | Block (return traffic only) | A compromised target can't start connections to my devices |
+| Lab → Management | Block | Targets must never reach the hypervisor |
+| Lab → External | Allow | Updates and downloads |
+| `vmbr1` → anywhere | None | The bridge has no uplink |
+
+**Test it, don't assume it:**
+
+- From a Lab VM, a ping or SSH to a Trusted device must fail.
+- From the Trusted workstation, SSH to a Lab VM must work.
+- From a Lab VM, the hypervisor's management address must be unreachable.
+
+## VM inventory
+
+| VM | ID | Network | Address | Notes |
+|---|---|---|---|---|
+| `pve01` (host) | n/a | Management | 10.10.10.20/24 | Static; web UI on 8006 |
+| `docker-targets` | 100 | Lab | 10.10.80.25 | DHCP reservation |
+| `metasploitable2` | 101 | Lab | DHCP | IDE disk, E1000 NIC |
+| `win-dc` (DC1) | 102 | Lab + `vmbr1` | 10.10.80.2 / 10.10.100.10 | Static; BIOS/MBR, SATA |
+| `internal-dc` (DC2) | 103 | `vmbr1` only | 10.10.100.11 | No gateway; DNS = DC1 |
+| `siem` | 104 | Lab | 10.10.80.7 | Splunk web on 8000 |
+| `win11-client1` | 200 | Lab | DHCP | UEFI + TPM 2.0 |
+
+## RAM budget
+
+The host has about 15.5 GB usable, and Proxmox itself takes about 1.3 GB. The lab runs in groups:
+
+| Group | VMs | RAM |
+|---|---|---|
+| Targets | docker-targets 4 GB, metasploitable2 1 GB | about 5 GB |
+| AD + SIEM | DC1 3 GB, DC2 1.5 GB, Windows client 3 GB, siem 4 GB | about 11.5 GB |
+
+Don't run both groups together. Start and stop each group from **Bulk Actions** in the Proxmox UI, and use start order and delays (DC1 first) for the AD group.

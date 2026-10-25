@@ -1,0 +1,22 @@
+# Disk images and installers
+*.qcow2
+*.vmdk
+*.iso
+*.deb
+*.msi
+*.zip
+
+# Captures and logs
+*.pcap
+*.pcapng
+*.log
+
+# Secrets and local config
+.env
+*.key
+*.pem
+secrets/
+
+# Editor and OS
+.DS_Store
+.vscode/
