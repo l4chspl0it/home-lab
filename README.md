@@ -52,7 +52,7 @@ Supporting files: [`configs/`](configs/) (Splunk forwarder inputs) and [`scripts
 | Host | Old laptop, 4 cores / 8 threads, 16 GB RAM, Proxmox VE 9.2 |
 | VM storage | 256 GB NVMe SSD (LVM-thin) |
 | Backups and ISOs | 1 TB hard disk (directory storage) |
-| Network | UniFi UDR7 gateway, switch with a trunk port to the host, and a UX7 on wired mesh backhaul |
+| Network | UniFi UDR7 gateway with a trunk port to the host, and a UX7 on wired mesh backhaul |
 
 ## Disclaimer
 

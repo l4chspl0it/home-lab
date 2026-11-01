@@ -18,15 +18,14 @@ All addressing below is **example addressing**.
 
 | Device | Role |
 |---|---|
-| UDR7 | Gateway: inter-VLAN routing, zone firewall, DHCP and DNS |
-| UniFi switch | Access ports and the trunk to the Proxmox host |
+| UDR7 | Gateway: inter-VLAN routing, zone firewall, DHCP and DNS. Its built-in LAN ports serve the Proxmox host and the UX7 (there is no separate switch) |
 | UX7 | Wi-Fi and mesh node, connected to the UDR7 by **wired mesh backhaul** |
 
-The switch port that feeds the UX7 is a trunk: **native VLAN Management, tagged VLANs Allow All**, so the UX7 can serve the Trusted, IoT and Guest SSIDs. The wired cameras plug into a LAN port on the UX7. **They are not on their own VLAN.** Carrying a separate VLAN across the mesh link to the UX7 proved too difficult, so the UX7 and the cameras sit on the **Management VLAN**, the same network as the Proxmox host. They are outside the lab, but worth knowing about when you review what can reach the hypervisor.
+The UDR7 port that feeds the UX7 is a trunk: **native VLAN Management, tagged VLANs Allow All**, so the UX7 can serve the Trusted, IoT and Guest SSIDs. The wired cameras plug into a LAN port on the UX7. **They are not on their own VLAN.** Carrying a separate VLAN across the mesh link to the UX7 proved too difficult, so the UX7 and the cameras sit on the **Management VLAN**, the same network as the Proxmox host. They are outside the lab, but worth knowing about when you review what can reach the hypervisor.
 
 ## Trunk to the hypervisor
 
-The switch port facing the host is a **trunk**:
+The UDR7 LAN port facing the host is a **trunk**:
 
 - **Native (untagged) VLAN:** Management, so the host keeps its management address.
 - **Tagged VLANs:** Lab only.
