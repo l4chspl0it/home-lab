@@ -9,11 +9,20 @@ All addressing below is **example addressing**.
 | Management | 10 | 10.10.10.0/24 | Hypervisor and admin interfaces |
 | Trusted | 20 | 10.10.20.0/24 | Daily devices |
 | IoT | 30 | 10.10.30.0/26 | Smart devices |
-| Cameras | 40 | 10.10.40.0/28 | Wired cameras |
 | Guest | 70 | 10.10.70.0/29 | Visitors |
 | Lab | 80 | 10.10.80.0/27 | Targets, DC1, SIEM, Windows client |
 | DMZ | 90 | 10.10.90.0/30 | Static addresses only |
 | `vmbr1` (Proxmox only) | none | 10.10.100.0/24 | Isolated DC-to-DC network |
+
+## UniFi hardware and cameras
+
+| Device | Role |
+|---|---|
+| UDR7 | Gateway: inter-VLAN routing, zone firewall, DHCP and DNS |
+| UniFi switch | Access ports and the trunk to the Proxmox host |
+| UX7 | Wi-Fi and mesh node, connected to the UDR7 by **wired mesh backhaul** |
+
+The wired cameras plug into a LAN port on the UX7. **They are not on their own VLAN.** Carrying a separate VLAN across the mesh link to the UX7 proved too difficult, so they share the UX7's network. They are outside the lab, but worth knowing about when you review what can reach what.
 
 ## Trunk to the hypervisor
 

@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1368" viewBox="0 0 1200 1368">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1386" viewBox="0 0 1200 1386">
 <defs><marker id="bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#2563eb"/></marker><marker id="rd" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b91c1c"/></marker></defs>
-<rect x="0" y="0" width="1200" height="1368" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
+<rect x="0" y="0" width="1200" height="1386" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
 <text x="30" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1b1f24" text-anchor="start">Home Lab Network: VLAN Architecture</text>
 <text x="30" y="54" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6572" text-anchor="start">UniFi · Proxmox VE on a spare laptop · example addressing, not real values</text>
 <rect x="1040" y="18" width="120" height="32" rx="16" fill="#eef1f5" stroke="#9aa4b2" stroke-width="1.6"/>
 <text x="1100" y="39" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Internet</text>
 <line x1="1100" y1="50" x2="1100" y2="70" stroke="#6b7480" stroke-width="2"/>
 <rect x="450" y="70" width="300" height="56" rx="10" fill="#eef1f5" stroke="#6b7480" stroke-width="1.6"/>
-<text x="600" y="93" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">UniFi gateway</text>
+<text x="600" y="93" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">UniFi gateway (UDR7)</text>
 <text x="600" y="112" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">inter-VLAN routing · zone firewall · DHCP/DNS</text>
 <line x1="750" y1="98" x2="1100" y2="98" stroke="#6b7480" stroke-width="2"/>
 <line x1="1100" y1="70" x2="1100" y2="98" stroke="#6b7480" stroke-width="2"/>
@@ -16,51 +16,55 @@
 <text x="600" y="172" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">UniFi switch</text>
 <text x="600" y="189" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">access ports + trunk to Proxmox</text>
 <line x1="600" y1="198" x2="600" y2="225" stroke="#6b7480" stroke-width="2"/>
-<line x1="114" y1="225" x2="1086" y2="225" stroke="#6b7480" stroke-width="2"/>
-<line x1="114" y1="225" x2="114" y2="250" stroke="#6b7480" stroke-width="2"/>
+<line x1="114" y1="225" x2="1086" y2="225" stroke="#6b7480" stroke-width="2" />
+<line x1="114" y1="225" x2="114" y2="250" stroke="#6b7480" stroke-width="2" />
 <rect x="39" y="250" width="150" height="96" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
 <text x="114" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Management</text>
 <text x="114" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 10</text>
 <text x="114" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.10.0/24</text>
 <text x="114" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Proxmox host, admin</text>
-<line x1="276" y1="225" x2="276" y2="250" stroke="#6b7480" stroke-width="2"/>
-<rect x="201" y="250" width="150" height="96" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.6"/>
-<text x="276" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Lab</text>
-<text x="276" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 80</text>
-<text x="276" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.80.0/27</text>
-<text x="276" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Targets, DCs, SIEM, tools</text>
-<line x1="438" y1="225" x2="438" y2="250" stroke="#6b7480" stroke-width="2"/>
-<rect x="363" y="250" width="150" height="96" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.6"/>
-<text x="438" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Trusted</text>
-<text x="438" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 20</text>
-<text x="438" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.20.0/24</text>
-<text x="438" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Trusted SSID</text>
-<line x1="600" y1="225" x2="600" y2="250" stroke="#6b7480" stroke-width="2"/>
-<rect x="525" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
-<text x="600" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">IOT</text>
-<text x="600" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 30</text>
-<text x="600" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.30.0/26</text>
-<text x="600" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">IoT SSID</text>
-<line x1="762" y1="225" x2="762" y2="250" stroke="#6b7480" stroke-width="2"/>
-<rect x="687" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
-<text x="762" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Cameras</text>
-<text x="762" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 40</text>
-<text x="762" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.40.0/28</text>
-<text x="762" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">wired cameras</text>
-<line x1="924" y1="225" x2="924" y2="250" stroke="#6b7480" stroke-width="2"/>
-<rect x="849" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
-<text x="924" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Guest</text>
-<text x="924" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 70</text>
-<text x="924" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.70.0/29</text>
-<text x="924" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Guest SSID</text>
-<line x1="1086" y1="225" x2="1086" y2="250" stroke="#6b7480" stroke-width="2"/>
+<line x1="308" y1="225" x2="308" y2="250" stroke="#6b7480" stroke-width="2" />
+<rect x="233" y="250" width="150" height="96" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.6"/>
+<text x="308" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Lab</text>
+<text x="308" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 80</text>
+<text x="308" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.80.0/27</text>
+<text x="308" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Targets, DCs, SIEM, tools</text>
+<line x1="503" y1="225" x2="503" y2="250" stroke="#6b7480" stroke-width="2" />
+<rect x="428" y="250" width="150" height="96" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.6"/>
+<text x="503" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Trusted</text>
+<text x="503" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 20</text>
+<text x="503" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.20.0/24</text>
+<text x="503" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Trusted SSID</text>
+<line x1="697" y1="225" x2="697" y2="250" stroke="#6b7480" stroke-width="2" />
+<rect x="622" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
+<text x="697" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">IOT</text>
+<text x="697" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 30</text>
+<text x="697" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.30.0/26</text>
+<text x="697" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">IoT SSID</text>
+<line x1="892" y1="225" x2="892" y2="250" stroke="#6b7480" stroke-width="2" />
+<rect x="817" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
+<text x="892" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">Guest</text>
+<text x="892" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 70</text>
+<text x="892" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.70.0/29</text>
+<text x="892" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Guest SSID</text>
+<line x1="1086" y1="225" x2="1086" y2="250" stroke="#6b7480" stroke-width="2" />
 <rect x="1011" y="250" width="150" height="96" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
 <text x="1086" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b1f24" text-anchor="middle">DMZ</text>
 <text x="1086" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">VLAN 90</text>
 <text x="1086" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.90.0/30</text>
 <text x="1086" y="333" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">no DHCP</text>
+<rect x="40" y="70" width="260" height="56" rx="10" fill="#eef1f5" stroke="#6b7480" stroke-width="1.6"/>
+<text x="170" y="93" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">UniFi Express 7 (UX7)</text>
+<text x="170" y="111" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="middle">Wi-Fi / mesh node</text>
+<line x1="300" y1="98" x2="450" y2="98" stroke="#6b7480" stroke-width="2" />
+<text x="375" y="90" font-family="DejaVu Sans, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#5b6572" text-anchor="middle">wired mesh</text>
+<text x="375" y="116" font-family="DejaVu Sans, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#5b6572" text-anchor="middle">backhaul</text>
+<line x1="170" y1="126" x2="170" y2="146" stroke="#6b7480" stroke-width="2" />
+<rect x="40" y="146" width="260" height="44" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
+<text x="170" y="165" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="middle">Cameras (wired to UX7 LAN port)</text>
+<text x="170" y="181" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" fill="#5b6572" text-anchor="middle">no separate VLAN</text>
 <line x1="114" y1="346" x2="114" y2="380" stroke="#2563eb" stroke-width="2.5" marker-end="url(#bl)"/>
-<line x1="276" y1="346" x2="276" y2="380" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#rd)"/>
+<line x1="308" y1="346" x2="308" y2="380" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#rd)"/>
 <rect x="39" y="380" width="546" height="800" rx="12" fill="#fafbfc" stroke="#6b7480" stroke-width="1.6"/>
 <text x="312" y="402" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Lab laptop · Proxmox VE 9.2 (pve01)</text>
 <text x="312" y="419" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="middle">Ethernet nic0 → switch trunk · native Mgmt, tagged Lab (80)</text>
@@ -224,12 +228,13 @@
 <rect x="650" y="1149" width="14" height="14" rx="3" fill="#cffafe" stroke="#0e7490" stroke-width="1.4"/>
 <text x="674" y="1160" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Tools</text>
 <text x="760" y="1160" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">netbox on demand, grafana always on</text>
-<rect x="39" y="1198" width="1122" height="150" rx="12" fill="#f5f6f8" stroke="#d5d9df" stroke-width="1.4"/>
+<rect x="39" y="1198" width="1122" height="168" rx="12" fill="#f5f6f8" stroke="#d5d9df" stroke-width="1.4"/>
 <text x="60" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="start">Notes</text>
 <text x="60" y="1244" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Management (VLAN 10) is the native network on the Proxmox trunk port; only Lab (80) is tagged.</text>
 <text x="60" y="1262" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• DC2 has a single NIC on vmbr1, so it only talks to DC1&#x27;s second NIC. It can&#x27;t reach siem, so it sends no logs.</text>
-<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• lab-targets (metasploitable2, docker-targets, badblood-dc) is set to No Internet in UniFi; the rest of the Lab can get out.</text>
-<text x="60" y="1298" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• badblood-dc is a separate throwaway forest for attack practice. Keep it off unless you are using it.</text>
-<text x="60" y="1316" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Kali runs in virt-manager on the workstation (Trusted) and reaches the Lab through the firewall.</text>
-<text x="60" y="1334" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Lab /27 has 29 host addresses after the gateway and 9 are in use. Plan a larger Lab subnet before adding more.</text>
+<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Cameras plug into the UX7, which links to the UDR7 by wired mesh. They share the UX7&#x27;s network; there is no Cameras VLAN.</text>
+<text x="60" y="1298" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• lab-targets (metasploitable2, docker-targets, badblood-dc) is set to No Internet in UniFi; the rest of the Lab can get out.</text>
+<text x="60" y="1316" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• badblood-dc is a separate throwaway forest for attack practice. Keep it off unless you are using it.</text>
+<text x="60" y="1334" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Kali runs in virt-manager on the workstation (Trusted) and reaches the Lab through the firewall.</text>
+<text x="60" y="1352" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Lab /27 has 29 host addresses after the gateway and 9 are in use. Plan a larger Lab subnet before adding more.</text>
 </svg>
