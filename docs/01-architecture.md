@@ -29,15 +29,19 @@ The switch port facing the host is a **trunk**:
 |---|---|---|
 | Trusted → Lab | Allow | I reach targets from my workstation |
 | Lab → Trusted | Block (return traffic only) | A compromised target can't start connections to my devices |
-| Lab → Management | Block | Targets must never reach the hypervisor |
-| Lab → External | Allow | Updates and downloads |
+| Lab → Management | Block (tested from `siem`) | Lab hosts must never reach the hypervisor |
+| Lab infra → External | Allow | `siem`, DCs, Windows client and tool containers need updates and downloads |
+| Lab targets → External | Block | A compromised target can't call out (no reverse shells, beaconing or exfiltration) |
 | `vmbr1` → anywhere | None | The bridge has no uplink |
+
+**How the target block is done:** in UniFi's Policy Engine → Objects, a client group named `lab-targets` holds `metasploitable2`, `docker-targets` and `badblood-dc`, with **Secure → Internet → No Internet** switched on. The Trusted → Lab and Lab → Trusted rules are unchanged, so you can still reach the targets from your workstation. Give group members DHCP reservations so they stay matched.
 
 **Test it, don't assume it:**
 
 - From a Lab VM, a ping or SSH to a Trusted device must fail.
 - From the Trusted workstation, SSH to a Lab VM must work.
 - From a Lab VM, the hypervisor's management address must be unreachable.
+- From a `lab-targets` host, `ping 1.1.1.1` must fail. From `siem`, it must work.
 
 ## VM inventory
 

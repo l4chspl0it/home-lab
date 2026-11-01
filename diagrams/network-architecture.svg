@@ -152,79 +152,83 @@
 <text x="485" y="1121" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24" text-anchor="middle">10.10.100.11/24</text>
 <text x="485" y="1137" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" fill="#5b6572" text-anchor="middle">no gateway · DNS = DC1</text>
 <text x="485" y="1150" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" fill="#5b6572" text-anchor="middle">sends no logs to siem</text>
-<rect x="630" y="380" width="531" height="215" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
+<rect x="630" y="380" width="531" height="222" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
 <text x="895.5" y="404" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Firewall policy (zone matrix)</text>
-<text x="650" y="437" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Trusted → Lab</text>
-<rect x="800" y="419" width="66" height="24" rx="6" fill="#ecfdf3" stroke="#15803d" stroke-width="1.5"/>
-<text x="833" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" text-anchor="middle">ALLOW</text>
-<text x="880" y="437" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">you reach the targets</text>
-<text x="650" y="470" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab → Trusted</text>
-<rect x="800" y="452" width="66" height="24" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
-<text x="833" y="469" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">BLOCK</text>
-<text x="880" y="470" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">return traffic only</text>
-<text x="650" y="503" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab → External</text>
-<rect x="800" y="485" width="66" height="24" rx="6" fill="#ecfdf3" stroke="#15803d" stroke-width="1.5"/>
-<text x="833" y="502" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" text-anchor="middle">ALLOW</text>
-<text x="880" y="503" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">downloads, updates</text>
-<text x="650" y="536" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab → Management</text>
-<rect x="800" y="518" width="66" height="24" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
-<text x="833" y="535" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#b45309" text-anchor="middle">CHECK</text>
-<text x="880" y="536" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">confirm Block All</text>
-<text x="650" y="569" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">vmbr1 → anywhere</text>
-<rect x="800" y="551" width="66" height="24" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="833" y="568" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#7c3aed" text-anchor="middle">NONE</text>
-<text x="880" y="569" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">no uplink at all</text>
-<rect x="630" y="607" width="531" height="420" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
-<text x="895.5" y="631" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Reach everything from your PC</text>
-<text x="650" y="658" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Proxmox UI</text>
-<text x="800" y="658" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">https://10.10.10.20:8006</text>
-<text x="650" y="682.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Splunk</text>
-<text x="800" y="682.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.7:8000</text>
-<text x="650" y="707.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">SSH to siem</text>
-<text x="800" y="707.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">ssh user@10.10.80.7</text>
-<text x="650" y="731.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">SSH to VM 100</text>
-<text x="800" y="731.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">ssh user@10.10.80.25</text>
-<text x="650" y="756.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Juice Shop</text>
-<text x="800" y="756.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:3000</text>
-<text x="650" y="780.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DVWA</text>
-<text x="800" y="780.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:8081</text>
-<text x="650" y="805.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">WebGoat</text>
-<text x="800" y="805.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:8080/WebGoat</text>
-<text x="650" y="829.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Metasploitable</text>
-<text x="800" y="829.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">nmap -sV 10.10.80.x</text>
-<text x="650" y="854.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DC1 (RDP)</text>
-<text x="800" y="854.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">10.10.80.2</text>
-<text x="650" y="878.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Win11 client</text>
-<text x="800" y="878.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">RDP to 10.10.80.3</text>
-<text x="650" y="903.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">BadBlood DC</text>
-<text x="800" y="903.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">RDP to 10.10.80.30</text>
-<text x="650" y="927.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">BloodHound</text>
-<text x="800" y="927.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.16:8080</text>
-<text x="650" y="952.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">NetBox</text>
-<text x="800" y="952.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.10</text>
-<text x="650" y="976.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Grafana</text>
-<text x="800" y="976.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.8:3000</text>
-<text x="650" y="1001.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DC2</text>
-<text x="800" y="1001.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">via DC1 or Proxmox console</text>
-<rect x="630" y="1039" width="531" height="141" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
-<text x="895.5" y="1062" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Power groups (start only what you need)</text>
-<rect x="650" y="1079" width="14" height="14" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.4"/>
-<text x="674" y="1090" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Targets</text>
-<text x="760" y="1090" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">docker-targets, metasploitable2</text>
-<rect x="650" y="1105" width="14" height="14" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.4"/>
-<text x="674" y="1116" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">AD + SIEM</text>
-<text x="760" y="1116" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">win-dc, internal-dc, win11-client1, siem</text>
-<rect x="650" y="1131" width="14" height="14" rx="3" fill="#ffedd5" stroke="#c2410c" stroke-width="1.4"/>
-<text x="674" y="1142" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Practice</text>
-<text x="760" y="1142" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">badblood-dc, bloodhound</text>
-<rect x="650" y="1157" width="14" height="14" rx="3" fill="#cffafe" stroke="#0e7490" stroke-width="1.4"/>
-<text x="674" y="1168" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Tools</text>
-<text x="760" y="1168" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">netbox on demand, grafana always on</text>
+<text x="650" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Trusted → Lab</text>
+<rect x="820" y="418" width="66" height="24" rx="6" fill="#ecfdf3" stroke="#15803d" stroke-width="1.5"/>
+<text x="853" y="435" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" text-anchor="middle">ALLOW</text>
+<text x="900" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">you reach the targets</text>
+<text x="650" y="466" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab → Trusted</text>
+<rect x="820" y="448" width="66" height="24" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="853" y="465" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">BLOCK</text>
+<text x="900" y="466" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">return traffic only</text>
+<text x="650" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab infra → External</text>
+<rect x="820" y="478" width="66" height="24" rx="6" fill="#ecfdf3" stroke="#15803d" stroke-width="1.5"/>
+<text x="853" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" text-anchor="middle">ALLOW</text>
+<text x="900" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">siem, DCs, client, tools</text>
+<text x="650" y="526" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab targets → External</text>
+<rect x="820" y="508" width="66" height="24" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="853" y="525" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">BLOCK</text>
+<text x="900" y="526" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">lab-targets group: No Internet</text>
+<text x="650" y="556" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Lab → Management</text>
+<rect x="820" y="538" width="66" height="24" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="853" y="555" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">BLOCK</text>
+<text x="900" y="556" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">tested from siem</text>
+<text x="650" y="586" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">vmbr1 → anywhere</text>
+<rect x="820" y="568" width="66" height="24" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="853" y="585" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#7c3aed" text-anchor="middle">NONE</text>
+<text x="900" y="586" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#5b6572" text-anchor="start">no uplink at all</text>
+<rect x="630" y="614" width="531" height="408" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
+<text x="895.5" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Reach everything from your PC</text>
+<text x="650" y="663" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Proxmox UI</text>
+<text x="800" y="663" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">https://10.10.10.20:8006</text>
+<text x="650" y="687" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Splunk</text>
+<text x="800" y="687" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.7:8000</text>
+<text x="650" y="711" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">SSH to siem</text>
+<text x="800" y="711" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">ssh user@10.10.80.7</text>
+<text x="650" y="735" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">SSH to VM 100</text>
+<text x="800" y="735" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">ssh user@10.10.80.25</text>
+<text x="650" y="759" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Juice Shop</text>
+<text x="800" y="759" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:3000</text>
+<text x="650" y="783" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DVWA</text>
+<text x="800" y="783" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:8081</text>
+<text x="650" y="807" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">WebGoat</text>
+<text x="800" y="807" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.25:8080/WebGoat</text>
+<text x="650" y="831" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Metasploitable</text>
+<text x="800" y="831" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">nmap -sV 10.10.80.x</text>
+<text x="650" y="855" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DC1 (RDP)</text>
+<text x="800" y="855" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">10.10.80.2</text>
+<text x="650" y="879" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Win11 client</text>
+<text x="800" y="879" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">RDP to 10.10.80.3</text>
+<text x="650" y="903" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">BadBlood DC</text>
+<text x="800" y="903" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">RDP to 10.10.80.30</text>
+<text x="650" y="927" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">BloodHound</text>
+<text x="800" y="927" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.16:8080</text>
+<text x="650" y="951" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">NetBox</text>
+<text x="800" y="951" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.10</text>
+<text x="650" y="975" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Grafana</text>
+<text x="800" y="975" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">http://10.10.80.8:3000</text>
+<text x="650" y="999" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">DC2</text>
+<text x="800" y="999" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1b1f24" text-anchor="start">via DC1 or Proxmox console</text>
+<rect x="630" y="1034" width="531" height="146" rx="12" fill="#ffffff" stroke="#d5d9df" stroke-width="1.4"/>
+<text x="895.5" y="1057" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="middle">Power groups (start only what you need)</text>
+<rect x="650" y="1074" width="14" height="14" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.4"/>
+<text x="674" y="1085" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Targets</text>
+<text x="760" y="1085" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">docker-targets, metasploitable2</text>
+<rect x="650" y="1099" width="14" height="14" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.4"/>
+<text x="674" y="1110" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">AD + SIEM</text>
+<text x="760" y="1110" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">win-dc, internal-dc, win11-client1, siem</text>
+<rect x="650" y="1124" width="14" height="14" rx="3" fill="#ffedd5" stroke="#c2410c" stroke-width="1.4"/>
+<text x="674" y="1135" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Practice</text>
+<text x="760" y="1135" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">badblood-dc, bloodhound</text>
+<rect x="650" y="1149" width="14" height="14" rx="3" fill="#cffafe" stroke="#0e7490" stroke-width="1.4"/>
+<text x="674" y="1160" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="start">Tools</text>
+<text x="760" y="1160" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5b6572" text-anchor="start">netbox on demand, grafana always on</text>
 <rect x="39" y="1198" width="1122" height="150" rx="12" fill="#f5f6f8" stroke="#d5d9df" stroke-width="1.4"/>
 <text x="60" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="start">Notes</text>
 <text x="60" y="1244" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Management (VLAN 10) is the native network on the Proxmox trunk port; only Lab (80) is tagged.</text>
 <text x="60" y="1262" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• DC2 has a single NIC on vmbr1, so it only talks to DC1&#x27;s second NIC. It can&#x27;t reach siem, so it sends no logs.</text>
-<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Docker runs inside VM 100 and inside the BloodHound container; reach apps through the host address.</text>
+<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• lab-targets (metasploitable2, docker-targets, badblood-dc) is set to No Internet in UniFi; the rest of the Lab can get out.</text>
 <text x="60" y="1298" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• badblood-dc is a separate throwaway forest for attack practice. Keep it off unless you are using it.</text>
 <text x="60" y="1316" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Kali runs in virt-manager on the workstation (Trusted) and reaches the Lab through the firewall.</text>
 <text x="60" y="1334" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Lab /27 has 29 host addresses after the gateway and 9 are in use. Plan a larger Lab subnet before adding more.</text>

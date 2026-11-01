@@ -25,3 +25,4 @@
 | Docker won't start inside an LXC | Container features are off | **Container → Options → Features:** tick **Nesting** (and **keyctl** if it still fails), then restart the container |
 | Two Lab hosts get the same address | A DHCP lease collides with a static address | Add a DHCP reservation, then `ipconfig /release` and `/renew` on the client |
 | BloodHound login fails on first start | Password not noted from the first run | Find the initial password in the container logs, or reset it with a fresh compose volume |
+| `docker pull` fails on `docker-targets` | The `lab-targets` group blocks internet access | Temporarily switch off **Secure → No Internet** on the group, pull, then switch it back on |

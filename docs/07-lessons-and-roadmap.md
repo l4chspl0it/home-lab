@@ -22,12 +22,13 @@
 - [x] Two domain controllers, including an isolated one on `vmbr1`
 - [x] Splunk SIEM with Windows and Sysmon logging
 - [x] Windows 11 client joined to the domain
+- [x] Firewall tested: Lab → Management blocked, `lab-targets` have no internet
 - [x] Throwaway BadBlood domain and BloodHound CE
 - [x] NetBox and Grafana containers
 
 ## Roadmap
 
-- [ ] Verify every firewall rule from both directions and document the results
+- [ ] Finish verifying the remaining firewall rules from both directions (Lab → Trusted, vmbr1) and document the results
 - [ ] Confirm the Windows client's forwarder and Sysmon are sending to Splunk
 - [ ] Write first detections and dashboards in Splunk
 - [ ] Record the VLANs, prefixes and VMs in NetBox

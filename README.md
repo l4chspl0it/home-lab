@@ -23,7 +23,7 @@ A VLAN-segmented home lab for security practice, built on one spare laptop runni
 
 ## Design principles
 
-- **Isolation first.** Vulnerable systems live on their own VLAN. The lab can't start connections to trusted or management networks.
+- **Isolation first.** Vulnerable systems live on their own VLAN. The lab can't start connections to trusted or management networks, and the vulnerable targets have no internet access at all.
 - **A sealed segment for DC2.** It sits on a bridge with no physical port and no uplink, so the only path in or out is DC1's second NIC.
 - **Disposable targets, protected infrastructure.** Targets can be rebuilt in minutes. The DCs and SIEM are backed up.
 - **Fit in 16 GB of RAM.** The lab runs in groups (targets, AD + SIEM, or attack practice), never everything at once. Only Grafana stays on.

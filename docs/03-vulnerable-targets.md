@@ -20,6 +20,7 @@ The three containers are in [`scripts/docker-targets.sh`](../scripts/docker-targ
 | OWASP WebGoat | 8080 (WebWolf on 9090) | Register an account; takes about a minute to start |
 
 - `--restart unless-stopped` brings the containers back after a reboot.
+- **Pulling images needs internet.** `docker-targets` is in the `lab-targets` group, which has No Internet. Switch that off temporarily to pull or update images, then switch it back on.
 - Check them with `docker ps`. A container that was stopped by hand stays stopped after a reboot.
 - Docker runs **inside the VM**. It isn't a separate Proxmox container.
 - **Port clashes:** if you add other apps to this VM, remap the left-hand port number (`-p 8082:80`).
