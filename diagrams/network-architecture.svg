@@ -62,7 +62,7 @@
 <line x1="170" y1="126" x2="170" y2="146" stroke="#6b7480" stroke-width="2" />
 <rect x="40" y="146" width="260" height="44" rx="10" fill="#f1f3f5" stroke="#9aa4b2" stroke-width="1.6"/>
 <text x="170" y="165" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1b1f24" text-anchor="middle">Cameras (wired to UX7 LAN port)</text>
-<text x="170" y="181" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" fill="#5b6572" text-anchor="middle">no separate VLAN</text>
+<text x="170" y="181" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" fill="#5b6572" text-anchor="middle">Management VLAN, no separate VLAN</text>
 <line x1="114" y1="346" x2="114" y2="380" stroke="#2563eb" stroke-width="2.5" marker-end="url(#bl)"/>
 <line x1="308" y1="346" x2="308" y2="380" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#rd)"/>
 <rect x="39" y="380" width="546" height="800" rx="12" fill="#fafbfc" stroke="#6b7480" stroke-width="1.6"/>
@@ -232,7 +232,7 @@
 <text x="60" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24" text-anchor="start">Notes</text>
 <text x="60" y="1244" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Management (VLAN 10) is the native network on the Proxmox trunk port; only Lab (80) is tagged.</text>
 <text x="60" y="1262" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• DC2 has a single NIC on vmbr1, so it only talks to DC1&#x27;s second NIC. It can&#x27;t reach siem, so it sends no logs.</text>
-<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Cameras plug into the UX7, which links to the UDR7 by wired mesh. They share the UX7&#x27;s network; there is no Cameras VLAN.</text>
+<text x="60" y="1280" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Cameras plug into the UX7, which links to the UDR7 by wired mesh. They sit on the Management VLAN; there is no Cameras VLAN.</text>
 <text x="60" y="1298" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• lab-targets (metasploitable2, docker-targets, badblood-dc) is set to No Internet in UniFi; the rest of the Lab can get out.</text>
 <text x="60" y="1316" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• badblood-dc is a separate throwaway forest for attack practice. Keep it off unless you are using it.</text>
 <text x="60" y="1334" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1b1f24" text-anchor="start">• Kali runs in virt-manager on the workstation (Trusted) and reaches the Lab through the firewall.</text>

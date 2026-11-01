@@ -22,7 +22,7 @@ All addressing below is **example addressing**.
 | UniFi switch | Access ports and the trunk to the Proxmox host |
 | UX7 | Wi-Fi and mesh node, connected to the UDR7 by **wired mesh backhaul** |
 
-The wired cameras plug into a LAN port on the UX7. **They are not on their own VLAN.** Carrying a separate VLAN across the mesh link to the UX7 proved too difficult, so they share the UX7's network. They are outside the lab, but worth knowing about when you review what can reach what.
+The switch port that feeds the UX7 is a trunk: **native VLAN Management, tagged VLANs Allow All**, so the UX7 can serve the Trusted, IoT and Guest SSIDs. The wired cameras plug into a LAN port on the UX7. **They are not on their own VLAN.** Carrying a separate VLAN across the mesh link to the UX7 proved too difficult, so the UX7 and the cameras sit on the **Management VLAN**, the same network as the Proxmox host. They are outside the lab, but worth knowing about when you review what can reach the hypervisor.
 
 ## Trunk to the hypervisor
 
