@@ -22,3 +22,6 @@
 | Forwarder shows nothing in Splunk | Wrong receiver, port, file name or index | Check `outputs.conf`, port 9997 and that `inputs.conf` isn't `.txt` |
 | Domain join times out | DNS returns an unreachable internal address | Stop DC1 registering its internal NIC in DNS (see [Active Directory](04-active-directory.md)) |
 | RDP window tiny in a black area | Remote desktop at a low fixed resolution | Turn on dynamic resolution, or set the profile resolution |
+| Docker won't start inside an LXC | Container features are off | **Container → Options → Features:** tick **Nesting** (and **keyctl** if it still fails), then restart the container |
+| Two Lab hosts get the same address | A DHCP lease collides with a static address | Add a DHCP reservation, then `ipconfig /release` and `/renew` on the client |
+| BloodHound login fails on first start | Password not noted from the first run | Find the initial password in the container logs, or reset it with a fresh compose volume |

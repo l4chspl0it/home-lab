@@ -49,7 +49,19 @@ The switch port facing the host is a **trunk**:
 | `win-dc` (DC1) | 102 | Lab + `vmbr1` | 10.10.80.2 / 10.10.100.10 | Static; BIOS/MBR, SATA |
 | `internal-dc` (DC2) | 103 | `vmbr1` only | 10.10.100.11 | No gateway; DNS = DC1 |
 | `siem` | 104 | Lab | 10.10.80.7 | Splunk web on 8000 |
-| `win11-client1` | 200 | Lab | DHCP | UEFI + TPM 2.0 |
+| `win11-client1` | 200 | Lab | 10.10.80.3 | UEFI + TPM 2.0; domain joined |
+| `badblood-dc` | 105 | Lab | 10.10.80.30 | Own forest, throwaway; 4 GB |
+| `bloodhound` (LXC) | 106 | Lab | 10.10.80.16 | BloodHound CE in Docker; 3 GB |
+| `netbox` (LXC) | 107 | Lab | 10.10.80.10 | Ubuntu 24.04 container; 2 GB |
+| `grafana` (LXC) | 108 | Lab | 10.10.80.8 | Ubuntu 24.04 container, always on; 1 GB |
+
+Containers (LXC) share the host kernel, so they are lighter than VMs. Docker inside an LXC needs **Nesting** switched on (see [Lab tools](09-lab-tools.md)).
+
+**Addressing note:** the Lab `/27` has 29 host addresses after the gateway, and 9 are in use (the eight Lab hosts above that have fixed addresses, plus Metasploitable). `10.10.80.30` is the last usable address. Plan a larger Lab subnet before adding more hosts.
+
+## Workstation
+
+Kali Linux runs in virt-manager on the workstation (Trusted VLAN) and reaches the Lab through the zone firewall, so it follows the same Trusted → Lab rule as everything else.
 
 ## RAM budget
 
@@ -59,5 +71,7 @@ The host has about 15.5 GB usable, and Proxmox itself takes about 1.3 GB. The la
 |---|---|---|
 | Targets | docker-targets 4 GB, metasploitable2 1 GB | about 5 GB |
 | AD + SIEM | DC1 3 GB, DC2 1.5 GB, Windows client 3 GB, siem 4 GB | about 11.5 GB |
+| Attack practice | badblood-dc 4 GB, bloodhound 3 GB | about 7 GB |
+| Tools | netbox 2 GB (on demand), grafana 1 GB (always on) | about 3 GB |
 
-Don't run both groups together. Start and stop each group from **Bulk Actions** in the Proxmox UI, and use start order and delays (DC1 first) for the AD group.
+Grafana (1 GB) stays on, so subtract it from every budget above. Don't run the Targets and AD + SIEM groups together, and don't run Attack practice alongside the full AD + SIEM group. Start and stop each group from **Bulk Actions** in the Proxmox UI, and use start order and delays (DC1 first) for the AD group.
